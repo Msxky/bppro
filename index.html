@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="icon" href="@msx_ki-profile.jpeg" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>DimensiVibes</title>
+  </head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
+
+*, html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark1: #111111;
+  --dark2: #222222;
+  --light: #eaeaea;
+}
+
+body {
+  font-family: 'poppins', sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--dark1);
+  height: 100dvh;
+}
+
+section {
+  background: var(--dark2);
+  width: 400px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+main section .image {
+  color: var(--light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+main section .image img {
+  margin-bottom: 1rem;
+  border: 1px solid var(--light);
+  width: 120px;
+  height: 120px;
+  box-shadow: 0 0 15px var(--dark1),
+  0 0 50px var(--dark1);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+main section .image h4 {
+  font-size: 12px;
+  text-align: center;
+  font-weight: 400;
+  opacity: 40%;
+  text-shadow: 0 0 15px var(--dark1),
+  0 0 50px var(--dark1),0 0 50px var(--dark1);
+}
+
+main section .image a {
+  color: var(--light);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+main section .image a:hover {
+  opacity: 100%;
+  text-decoration: underline;
+}
+
+main section .list {
+  border: 2px solid var(--dark1);
+  color: var(--light);
+  width: 80%;
+  display: flex;
+  background: var(--dark1);
+  padding: .2rem 1rem;
+  gap: 15px;
+  scale: .9;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+}
+
+main section .list:hover {
+  cursor: pointer;
+  border: 2px solid var(--light);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+main section .list .icon {
+  font-size: 30px;
+}
+
+main section .list p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+footer {
+  color: var(--light);
+  font-size: 10px;
+  position: relative;
+  padding-top: 40px;
+}
+
+img::selection, h2::selection, h4::selection, p::selection, span::selection, a::selection {
+  color: var(--dark2);
+  background: pink;
+}
+  </style>
+  <body>
+    <main>
+      <section>
+        <div class="image">
+          <img src="@msx_ki-profile.jpeg" alt="Profile Picture" />
+          <h2>Batang Padi Project</h2>
+          <h4>
+            Photography & Cinematography <br />
+            base in 
+            <a href="mailto:hallo@starsmusic.id">Payakumbuh, Padang Datar</a> for
+            business. <br />
+          </h4>
+        </div>
+        <div class="list" id="saweria">
+          <div class="icon" ><i class="bx bxl-whatsapp"></i></div>
+          <p>WhatsApp</p>
+        </div>
+        <div class="list" id="whatsapp">
+          <div class="icon"><i class="bx bxl-youtube"></i></div>
+          <p>YouTube channel</p>
+        </div>
+        <footer><p>thankyou :) all ❤</p></footer>
+      </section>
+    </main>
+  </body>
+  <script>
+    const whatsapp = document.getElementById("whatsapp");
+    const saweria = document.getElementById("saweria");
+
+    whatsapp.addEventListener("click", function () {
+      window.open(
+        "https://api.whatsapp.com/send/?phone=+62085311726588&text=Hallo%20kak!&type=phone_number&app_absent=0",
+        "_blank"
+      );
+    });
+    saweria.addEventListener("click", function () {
+      window.open("https://www.youtube.com/@BatangPadiProject", "_blank");
+    });
+  </script>
+</html>
