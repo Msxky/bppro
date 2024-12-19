@@ -61,9 +61,6 @@ main section .image img {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
-img{
-  transform: scale(1.5);
-}
 
 main section .image h4 {
   font-size: 12px;
