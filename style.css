@@ -50,6 +50,7 @@ main section .image {
 }
 
 main section .image img {
+  scale: 2;
   margin-bottom: 1rem;
   border: 1px solid var(--light);
   width: 120px;
