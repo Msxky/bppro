@@ -50,7 +50,6 @@ main section .image {
 }
 
 main section .image img {
-  transform: scale(1.5);
   margin-bottom: 1rem;
   border: 1px solid var(--light);
   width: 120px;
@@ -61,10 +60,9 @@ main section .image img {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  -webkit-transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  -o-transform: scale(1.5);
+}
+img{
+  transform: scale(1.5);
 }
 
 main section .image h4 {
