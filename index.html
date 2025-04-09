@@ -3,13 +3,249 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="LogoBP.png" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
     <title>Batang Padi Project</title>
+    <link rel="icon" href="LogoBP.png" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
+
+      *, html {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --dark1: #1a1a1a;
+        --dark2: #2d2d2d;
+        --dark3: #3d3d3d;
+        --dark4: #4a4a4a;
+        --light: #eaeaea;
+        --accent: #ff6b6b;
+        --shadow-light: rgba(255, 255, 255, 0.1);
+        --shadow-dark: rgba(0, 0, 0, 0.3);
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--dark1);
+        color: var(--light);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      main {
+        width: 100%;
+        max-width: 420px;
+      }
+
+      section {
+        background: var(--dark1);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 
+          8px 8px 15px var(--shadow-dark),
+          -8px -8px 15px var(--shadow-light);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .image img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--dark2);
+        box-shadow: 
+          6px 6px 12px var(--shadow-dark),
+          -6px -6px 12px var(--shadow-light),
+          inset 3px 3px 8px var(--shadow-dark),
+          inset -3px -3px 8px var(--shadow-light);
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+      }
+
+      .image img:hover {
+        transform: scale(1.05);
+      }
+
+      .image h2 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 8px;
+        text-shadow: 2px 2px 4px var(--shadow-dark);
+      }
+
+      .image h4 {
+        font-size: 14px;
+        font-weight: 400;
+        opacity: 0.8;
+        line-height: 1.5;
+      }
+
+      .image a {
+        color: var(--light);
+        font-weight: 600;
+        text-decoration: none;
+        position: relative;
+      }
+
+      .image a::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--accent);
+        transition: width 0.3s ease;
+      }
+
+      .image a:hover::after {
+        width: 100%;
+      }
+
+      .list {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 12px 20px;
+        background: var(--dark2);
+        border-radius: 12px;
+        box-shadow: 
+          5px 5px 10px var(--shadow-dark),
+          -5px -5px 10px var(--shadow-light);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .list::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        transition: 0.5s;
+      }
+
+      .list:hover {
+        transform: translateY(-3px);
+        box-shadow: 
+          8px 8px 15px var(--shadow-dark),
+          -8px -8px 15px var(--shadow-light);
+      }
+
+      .list:hover::before {
+        left: 100%;
+      }
+
+      /* Animasi warna background saat hover */
+      #whatsapp:hover {
+        background: var(--dark3);
+      }
+
+      #youtube:hover {
+        background: var(--dark3);
+      }
+
+      /* Animasi warna background saat aktif/diklik */
+      .list:active {
+        transform: translateY(1px);
+        box-shadow: 
+          2px 2px 5px var(--shadow-dark),
+          -2px -2px 5px var(--shadow-light);
+      }
+
+      #whatsapp:active {
+        background: #25D366;
+      }
+
+      #youtube:active {
+        background: #FF0000;
+      }
+
+      .icon {
+        font-size: 28px;
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      /* Warna ikon saat hover */
+      #whatsapp:hover .icon {
+        color: #25D366;
+      }
+
+      #youtube:hover .icon {
+        color: #FF0000;
+      }
+
+      .list p {
+        font-size: 16px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      /* Warna teks saat hover */
+      #whatsapp:hover p {
+        color: #25D366;
+      }
+
+      #youtube:hover p {
+        color: #FF0000;
+      }
+
+      footer {
+        margin-top: 20px;
+        font-size: 12px;
+        opacity: 0.6;
+        text-align: center;
+      }
+
+      img::selection, h2::selection, h4::selection, p::selection, span::selection, a::selection {
+        color: var(--dark2);
+        background: pink;
+      }
+
+      /* Neumorphic active effect */
+      .list.active {
+        box-shadow: 
+          inset 3px 3px 6px var(--shadow-dark),
+          inset -3px -3px 6px var(--shadow-light);
+      }
+
+      /* Animasi mengkilap saat hover */
+      .list:hover {
+        background: var(--dark3);
+      }
+
+      /* Transition untuk perubahan warna */
+      #whatsapp, #youtube {
+        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      }
+    </style>
   </head>
   <body>
     <main>
@@ -24,30 +260,65 @@
             business. <br />
           </h4>
         </div>
-        <div class="list" id="whatsapp">
-          <div class="icon" ><i class="bx bxl-whatsapp"></i></div>
+        <button class="list" id="whatsapp">
+          <div class="icon"><i class="bx bxl-whatsapp"></i></div>
           <p>WhatsApp</p>
-        </div>
-        <div class="list" id="youtube">
+        </button>
+        <button class="list" id="youtube">
           <div class="icon"><i class="bx bxl-youtube"></i></div>
           <p>YouTube Channel</p>
-        </div>
+        </button>
         <footer><p>thankyou :) all ❤</p></footer>
       </section>
     </main>
-  </body>
-  <script>
-    const whatsapp = document.getElementById("whatsapp");
-    const youtube = document.getElementById("youtube");
+    <script>
+      const whatsapp = document.getElementById("whatsapp");
+      const youtube = document.getElementById("youtube");
 
-    whatsapp.addEventListener("click", function () {
-      window.open(
-        "https://api.whatsapp.com/send/?phone=+62085311726588&text=Hallo%20kak!&type=phone_number&app_absent=0",
-        "_blank"
-      );
-    });
-    youtube.addEventListener("click", function () {
-      window.open("https://www.youtube.com/@BatangPadiProject", "_blank");
-    });
-  </script>
+      // Add active class on click
+      function handleClick(element, url) {
+        // Tambahkan efek warna saat diklik
+        if (element.id === 'whatsapp') {
+          element.style.backgroundColor = '#25D366';
+        } else if (element.id === 'youtube') {
+          element.style.backgroundColor = '#FF0000';
+        }
+        
+        // Kembalikan warna setelah 300ms
+        setTimeout(() => {
+          element.style.backgroundColor = '';
+          window.open(url, "_blank");
+        }, 300);
+      }
+
+      whatsapp.addEventListener("click", function() {
+        handleClick(this, "https://api.whatsapp.com/send/?phone=+62085311726588&text=Hallo%20kak!&type=phone_number&app_absent=0");
+      });
+
+      youtube.addEventListener("click", function() {
+        handleClick(this, "https://www.youtube.com/@BatangPadiProject");
+      });
+
+      // Add keyboard navigation
+      document.addEventListener("keydown", function(e) {
+        if (e.key === "1") {
+          whatsapp.click();
+        } else if (e.key === "2") {
+          youtube.click();
+        }
+      });
+
+      // Animasi hover tambahan
+      const buttons = document.querySelectorAll('.list');
+      buttons.forEach(button => {
+        button.addEventListener('mouseenter', () => {
+          button.style.transform = 'translateY(-3px)';
+        });
+        
+        button.addEventListener('mouseleave', () => {
+          button.style.transform = '';
+        });
+      });
+    </script>
+  </body>
 </html>
